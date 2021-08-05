@@ -22,16 +22,16 @@ while True:
 
     read_sockets,write_socket, error_socket = select.select(sockets_list,[],[])
     for socks in read_sockets:
-	if socks == server:
+        if socks == server:
             message = socks.recv(2048)
             # The message is printed and decoded()
-	    print (message.decode())
-	else:
+            print(message.decode())
+        else:
             message = sys.stdin.readline()
             # The message is encoded.
        	    server.send(bytes(message,'utf-8'))
-	    sys.stdout.write("<Me>")
-	    sys.stdout.write(message)
-	    sys.stdout.flush()
+            sys.stdout.write("<Me> ")
+            sys.stdout.write(message)
+            sys.stdout.flush()
             
 server.close()
