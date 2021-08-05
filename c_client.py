@@ -17,11 +17,10 @@ while True:
 	sockets_list = [sys.stdin, server]
 
 	read_sockets,write_socket, error_socket = select.select(sockets_list,[],[])
-
 	for socks in read_sockets:
 		if socks == server:
 			message = socks.recv(2048)
-			print (message)
+			print (message.decode())
 		else:
 			message = sys.stdin.readline()
 			server.send(bytes(message,'utf-8'))
