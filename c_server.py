@@ -16,7 +16,7 @@ def chat_server():
  
     # add server socket object to the list of readable connections
     SOCKET_LIST.append(server_socket)
- 
+    print(SOCKET_LIST)
     print("Chat server started on port ", str(PORT))
  
     while 1:
@@ -24,13 +24,14 @@ def chat_server():
         # get the list sockets which are ready to be read through select
         # 4th arg, time_out  = 0 : poll and never block
         ready_to_read,ready_to_write,in_error = select.select(SOCKET_LIST,[],[],0)
-      
+
         for sock in ready_to_read:
             # a new connection request recieved
+            print(sock, "-------", server_socket)
             if sock == server_socket: 
                 sockfd, addr = server_socket.accept()
                 SOCKET_LIST.append(sockfd)
-                print("Client (%s, %s) connected",  addr)
+                print("Client connected: ",  addr)
                  
                 broadcast(server_socket, sockfd, "[%s:%s] entered our chatting room\n" % addr)
              
@@ -40,6 +41,7 @@ def chat_server():
                 try:
                     # receiving data from the socket.
                     data = sock.recv(RECV_BUFFER)
+                    print(data)
                     if data:
                         # there is something in the socket
                         broadcast(server_socket, sock, "\r" + '[' + str(sock.getpeername()) + '] ' + data)  
