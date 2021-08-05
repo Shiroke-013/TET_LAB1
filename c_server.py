@@ -1,79 +1,73 @@
-import sys
+# Python program to implement server side of chat room.
 import socket
 import select
+import sys
+from _thread import *
 
-HOST = '0.0.0.0' 
-SOCKET_LIST = []
-RECV_BUFFER = 4096 
-PORT = 1315
 
-def chat_server():
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-    server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    server_socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-    server_socket.bind((HOST, PORT))
-    server_socket.listen(20)
- 
-    # add server socket object to the list of readable connections
-    SOCKET_LIST.append(server_socket)
-    print(SOCKET_LIST)
-    print("Chat server started on port ", str(PORT))
- 
-    while 1:
+# checks whether sufficient arguments have been provided
+if len(sys.argv) != 3:
+	print ("Correct usage: script, IP address, port number")
+	exit()
+        
+# takes the first argument from command prompt as IP address
+IP_address = str(sys.argv[1])
 
-        # get the list sockets which are ready to be read through select
-        # 4th arg, time_out  = 0 : poll and never block
-        ready_to_read,ready_to_write,in_error = select.select(SOCKET_LIST,[],[],0)
+# takes second argument from command prompt as port number
+Port = int(sys.argv[2])
 
-        for sock in ready_to_read:
-            # a new connection request recieved
-            print(sock, "-------", server_socket)
-            if sock == server_socket: 
-                sockfd, addr = server_socket.accept()
-                SOCKET_LIST.append(sockfd)
-                print("Client connected: ",  addr)
-                 
-                broadcast(server_socket, sockfd, "[%s:%s] entered our chatting room\n" % addr)
-             
-            # a message from a client, not a new connection
+server.bind((IP_address, Port))
+
+server.listen(100)
+
+list_of_clients = []
+
+def clientthread(conn, addr):
+    # sends a message to the client whose user object is conn
+    conn.send(bytes("Welcome to this chatroom!", 'utf-8'))
+    while True:
+        try:
+            message = conn.recv(2048)
+            print(message)
+            if(message):
+                print ("<" + addr[0] + "> " + message)
+       	        # Calls broadcast function to send message to all
+                message_to_send = "<" + addr[0] + "> " + message
+                broadcast(message_to_send, conn)                
             else:
-                # process data recieved from client, 
-                try:
-                    # receiving data from the socket.
-                    data = sock.recv(RECV_BUFFER)
-                    print(data)
-                    if data:
-                        # there is something in the socket
-                        broadcast(server_socket, sock, "\r" + '[' + str(sock.getpeername()) + '] ' + data)  
-                    else:
-                        # remove the socket that's broken    
-                        if sock in SOCKET_LIST:
-                            SOCKET_LIST.remove(sock)
+                remove(conn)
+        except:
+            continue
 
-                        # at this stage, no data means probably the connection has been broken
-                        broadcast(server_socket, sock, "Client (%s, %s) is offline\n" % addr) 
+def broadcast(message, connection):
+    for clients in list_of_clients:
+        if clients!=connection:
+            try:
+                clients.send(message)
+            except:
+                clients.close()
+                # if the link is brken, the client is remove
+                remove(clients)
 
-                # exception 
-                except:
-                    broadcast(server_socket, sock, "Client (%s, %s) is offline\n" % addr)
-                    continue
+def remove(connection):
+    if connection in list_of_clients:
+        list_of_clients.remove(connection)
 
-    server_socket.close()
-    
-# broadcast chat messages to all connected clients
-def broadcast (server_socket, sock, message):
-    for socket in SOCKET_LIST:
-        # send the message only to peer
-        if socket != server_socket and socket != sock :
-            try :
-                socket.send(message)
-            except :
-                # broken socket connection
-                socket.close()
-                # broken socket, remove it
-                if socket in SOCKET_LIST:
-                    SOCKET_LIST.remove(socket)
- 
-if __name__ == "__main__":
+while True:
+        
+    conn, addr = server.accept()
+    list_of_clients.append(conn)
 
-    sys.exit(chat_server())
+    # prints the address of the user that just connected
+    print (addr[0] + " connected")
+
+    # creates and individual thread for every user
+    # that connects
+    start_new_thread(clientthread,(conn,addr))	
+
+conn.close()
+server.close()
+
