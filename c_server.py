@@ -30,12 +30,11 @@ def clientthread(conn, addr):
     conn.send(bytes("Welcome to this chatroom!", 'utf-8'))
     while True:
         try:
-            message = conn.recv(2048)
-            print(message)
+            message = conn.recv(2048).decode()
             if(message):
-                print ("<" + addr[0] + "> " + message)
+                print ("<" + str(addr[0]) + "> " + message)
        	        # Calls broadcast function to send message to all
-                message_to_send = "<" + addr[0] + "> " + message
+                message_to_send = "<" + str(addr[0]) + "> " + message
                 broadcast(message_to_send, conn)                
             else:
                 remove(conn)
