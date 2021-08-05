@@ -1,58 +1,60 @@
-# Python program to implement server side of chat room.
 import socket
 import select
 import sys
 from _thread import *
 
 
+# A socket object is created with an address family for IPv4 and TCP socket type. 
 server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 
-# checks whether sufficient arguments have been provided
+# Checks if the number of arguments is given is correct.
 if len(sys.argv) != 3:
 	print ("Correct usage: script, IP address, port number")
 	exit()
         
-# takes the first argument from command prompt as IP address
-IP_address = str(sys.argv[1])
+# The first argument from the prompt is saved in IP_ADDRESS as a IP address.
+IP_ADDRESS = str(sys.argv[1])
 
-# takes second argument from command prompt as port number
-Port = int(sys.argv[2])
+# The second argument from the prompt is saved in PORT as a port number.
+PORT = int(sys.argv[2])
 
-server.bind((IP_address, Port))
-
+server.bind((IP_ADDRESS, PORT))
 server.listen(100)
 
+# List were all the future clients will be saved.
 list_of_clients = []
 
-def clientthread(conn, addr):
-    # sends a message to the client whose user object is conn
-    conn.send(bytes("Welcome to this chatroom!", 'utf-8'))
+def client_thread(conn, addr):
+    # Sends a welcome message to the just connected clientt whose user object is conn.
+    conn.send(bytes("Welcome to the chatroom!", 'utf-8'))
     while True:
         try:
             message = conn.recv(2048).decode()
             if(message):
                 print ("<" + str(addr[0]) + "> " + message)
-       	        # Calls broadcast function to send message to all
+       	        # Calls broadcast function to send client message to the rest of clients.
                 message_to_send = "<" + str(addr[0]) + "> " + message
-                broadcast(message_to_send, conn)                
+                spread_the_voice(message_to_send, conn)                
             else:
                 remove(conn)
         except:
             continue
 
-def broadcast(message, connection):
-    for clients in list_of_clients:
-        if clients!=connection:
+def spread_the_voice(message, connection):
+    for client in list_of_clients:
+        if client!=connection:
             try:
-                clients.send(message)
+                # Before sending the message, it is encoded().
+                client.send(message.encode())
             except:
-                clients.close()
-                # if the link is brken, the client is remove
-                remove(clients)
+                client.close()
+                # The client is remove if the link with it is broken.
+                remove(client)
 
 def remove(connection):
     if connection in list_of_clients:
+        # A client connection is remove.
         list_of_clients.remove(connection)
 
 while True:
@@ -60,12 +62,11 @@ while True:
     conn, addr = server.accept()
     list_of_clients.append(conn)
 
-    # prints the address of the user that just connected
+    # Prints the address of the Client that just connected
     print (addr[0] + " connected")
 
-    # creates and individual thread for every user
-    # that connects
-    start_new_thread(clientthread,(conn,addr))	
+    # For each user that connects a thread is created.
+    start_new_thread(client_thread,(conn,addr))	
 
 conn.close()
 server.close()
