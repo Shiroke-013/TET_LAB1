@@ -10,7 +10,7 @@ Para ver la aplicación en funcionamiento se deben de instanciar como minimo 3 i
 
 Para un funcionamiento correcto las instancias deben de contar con git, python3 y un editor de texto de preferencia, por defecto la mayoría de máquinas traen VIM.
 
-***!Tener en cuenta que para poder ejecutar los comandos a continuación se debe de acceder a las diferentes instancias via SSH¡, en la parte de ejecución hay un ejemplo del comando para realizar esta conexión.***
+***¡Tener en cuenta que para poder ejecutar los comandos a continuación se debe de acceder a las diferentes instancias via SSH!, en la parte de ejecución hay un ejemplo del comando para realizar esta conexión.***
 
 Se puede usar los siguientes comandos:
 
