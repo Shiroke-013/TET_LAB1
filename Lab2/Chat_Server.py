@@ -68,7 +68,7 @@ class message_Handler(BaseHTTPRequestHandler):
 
 
 def main():
-    server = HTTPServer((IP,PORT),msgHandler)
+    server = HTTPServer((IP_ADDRESS,PORT),message_Handler)
     print("Server running on port {}".format(PORT))
     server.serve_forever()
 

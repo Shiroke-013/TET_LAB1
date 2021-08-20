@@ -16,7 +16,7 @@ conn = http.client.HTTPConnection(IP_ADDRESS, PORT)
 while True:
     while True:
         n_name = input("Nickname: ")
-        if len(n_name > 0):
+        if len(n_name) > 0:
             break
         else:
             print("Please enter a Nickname/Username")
