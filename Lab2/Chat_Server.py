@@ -31,6 +31,7 @@ class message_Handler(BaseHTTPRequestHandler):
             content_len = int(self.headers.get('Content-Length'))
             post_body = self.rfile.read(content_len)
             post_body = post_body.decode()
+            
             if msgs.get(post_body) == None:
                 msgs[post_body] = ""
                 self.send_response(201)
@@ -41,6 +42,7 @@ class message_Handler(BaseHTTPRequestHandler):
                 self.send_response(401)
                 self.send_header('content-type','text/html')
                 self.end_headers()
+ 
         elif(self.path.endswith("/getM")):
             content_len = int(self.headers.get('Content-Length'))
             post_body = self.rfile.read(content_len).decode()
@@ -64,7 +66,7 @@ class message_Handler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header('content-type','text/html')
             self.end_headers()
-            # self.wfile.write('POST'.encode())
+            #self.wfile.write('POST'.encode())
 
 
 def main():
