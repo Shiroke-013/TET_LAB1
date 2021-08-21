@@ -42,20 +42,18 @@ while True:
 
 while True:
     try:
-        t1 = Thread(target = getting_message)
-        t1.start()
-        #while True:
-           # m = input("<{}> ".format(n_name))
-           # print("m: ", m)
-           # if len(m) != 0:
-           #     m = "<" + n_name + "> " + m
-           #     conn.request("POST","/",m.encode())
-           #     r = conn.getresponse()
+        while True:
+            m = input("<{}> ".format(n_name))
+            print("m: ", m)
+            if len(m) != 0:
+                m = "<" + n_name + "> " + m
+                conn.request("POST","/",m.encode())
+                r = conn.getresponse()
 
-        conn.request("POST","/getM",n_name.encode())
-        r = conn.getresponse()
-        d = r.read().decode()
-        #print("Response received: ", d)
+            conn.request("POST","/getM",n_name.encode())
+            r = conn.getresponse()
+            d = r.read().decode()
+            print("Response received: ", d)
 
     except KeyboardInterrupt as error:
         print("Keyboard Interruption... bye bye: {}".format(str(error)))
