@@ -47,6 +47,7 @@ class message_Handler(BaseHTTPRequestHandler):
             print("Sending Back")
             content_len = int(self.headers.get('Content-Length'))
             post_body = self.rfile.read(content_len).decode()
+            print("Post Body getM: ", post_body)
             self.send_response(200)
             self.send_header('content-type','text/html')
             self.end_headers()
@@ -58,7 +59,7 @@ class message_Handler(BaseHTTPRequestHandler):
         else:
             content_len = int(self.headers.get('Content-Length'))
             print("Content Len: ", content_len)
-            ost_body = self.rfile.read(content_len)
+            post_body = self.rfile.read(content_len)
             post_body = post_body.decode()
             print("Post Body decode: ",post_body)
             n_name = post_body.split(">")[0]
