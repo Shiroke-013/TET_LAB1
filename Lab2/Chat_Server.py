@@ -62,7 +62,7 @@ class message_Handler(BaseHTTPRequestHandler):
             post_body = self.rfile.read(content_len)
             post_body = post_body.decode()
             print("Post Body decode: ",post_body)
-            n_name = post_body.split(">")[0]
+            n_name = post_body.split(":")[0]
             print("Nickname: ", n_name)
             print("msgs: ", msgs)
             for name in msgs:
