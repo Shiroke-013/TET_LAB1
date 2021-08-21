@@ -44,33 +44,24 @@ class message_Handler(BaseHTTPRequestHandler):
                 self.end_headers()
  
         elif(self.path.endswith("/getM")):
-            print("Sending Back")
             content_len = int(self.headers.get('Content-Length'))
             post_body = self.rfile.read(content_len).decode()
-            print("Post Body getM: ", post_body)
             self.send_response(200)
             self.send_header('content-type','text/html')
             self.end_headers()
             message = msgs.get(post_body)
-            print("message: ", message)
             msgs[post_body] = ""
             self.wfile.write(message.encode())
 
         else:
             content_len = int(self.headers.get('Content-Length'))
-            print("Content Len: ", content_len)
             post_body = self.rfile.read(content_len)
             post_body = post_body.decode()
-            print("Post Body decode: ",post_body)
             n_name = post_body.split(":")[0]
-            print("Nickname: ", n_name)
-            print("msgs: ", msgs)
             for name in msgs:
-                print("name: ", name)
                 if name != n_name:
                     msg = msgs.get(name)
                     msg = msg + "\n" + post_body
-                    print("msg: ", msg)
                     msgs[name] = msg
             self.send_response(200)
             self.send_header('content-type','text/html')

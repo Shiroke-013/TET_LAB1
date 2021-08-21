@@ -32,8 +32,6 @@ while True:
     try:
         while True:
             m = input("{}: ".format(n_name))
-            print("n_name: ", n_name)
-            print("m: ", m)
             if len(m) != 0:
                 m =  n_name + ": " + m
                 conn.request("POST","/",m.encode())
