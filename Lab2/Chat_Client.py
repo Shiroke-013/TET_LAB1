@@ -30,7 +30,7 @@ while True:
 
 while True:
     try:
-        m = sys.stdin.readLine()
+        m = sys.stdin.readline()
         if (len(m) != 0):
             m = "<" + n_name + "> " + m
             conn.request("POST","/",m.encode())
