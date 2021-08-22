@@ -40,7 +40,6 @@ while True:
             conn.request("POST","/getM",n_name.encode())
             r = conn.getresponse()
             d = r.read().decode()
-            print("Response received: ", d)
 
     except KeyboardInterrupt as error:
         print("Keyboard Interruption... bye bye: {}".format(str(error)))
