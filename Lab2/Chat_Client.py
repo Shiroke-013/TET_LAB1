@@ -1,5 +1,18 @@
 import http.client
 import sys
+import time
+import threading
+
+
+def getting_messages():
+    while True:
+        conn.request("POST","/getM",n_name.encode())
+        r = conn.getresponse()
+        d = r.read().decode()
+        print(d)
+        print("Sleeping...")
+        time.sleep(3)
+        print("Awake")
 
 if len(sys.argv) != 3:
     print ("How to make it work: script, IP address, PORT number")
@@ -28,18 +41,21 @@ while True:
     else:
         print("Nickname already taken, try another one")
 
+thread = threading.Thread(target=getting_messages, daemon=True)
+thread.start()
+
 while True:
     try:
-        while True:
-            m = input("{}: ".format(n_name))
-            if len(m) != 0:
-                m =  n_name + ": " + m
-                conn.request("POST","/",m.encode())
-                r = conn.getresponse()
-
-            conn.request("POST","/getM",n_name.encode())
+        # while True:
+        m = input("{}: ".format(n_name))
+        if len(m) != 0:
+            m =  n_name + ": " + m
+            conn.request("POST","/",m.encode())
             r = conn.getresponse()
-            d = r.read().decode()
+
+           # conn.request("POST","/getM",n_name.encode())
+           # r = conn.getresponse()
+           # d = r.read().decode()
 
     except KeyboardInterrupt as error:
         print("Keyboard Interruption... bye bye: {}".format(str(error)))
