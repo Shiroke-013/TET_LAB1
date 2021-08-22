@@ -16,6 +16,8 @@ PORT = int(sys.argv[2])
 msgs={}
 
 class message_Handler(BaseHTTPRequestHandler):
+
+    # Definition on method POST, what it should do if it is received.
     def do_GET(self):
         self.send_response(200)
         self.send_header('content-type','text/html')
@@ -26,6 +28,7 @@ class message_Handler(BaseHTTPRequestHandler):
         msg = "nada"
         self.wfile.write(msg.encode())
 
+    # Definition on method POST, what it should do if it is received.
     def do_POST(self):
         if(self.path.endswith("/nickname")):
             content_len = int(self.headers.get('Content-Length'))

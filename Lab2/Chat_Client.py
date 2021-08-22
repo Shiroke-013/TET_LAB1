@@ -3,13 +3,14 @@ import sys
 import time
 import threading
 
-
+# Method that Thread is executing.
 def getting_messages():
     while True:
         conn.request("POST","/getM",n_name.encode())
         r = conn.getresponse()
         d = r.read().decode()
-        print(d)
+        if len(d) != 0:
+            print(d)
         time.sleep(3)
 
 if len(sys.argv) != 3:
@@ -39,24 +40,20 @@ while True:
     else:
         print("Nickname already taken, try another one")
 
+# Thread created and started
 thread = threading.Thread(target=getting_messages, daemon=True)
 thread.start()
 
 while True:
     try:
-        # while True:
         m = input("{}: ".format(n_name))
         if len(m) != 0:
             m =  n_name + ": " + m
             conn.request("POST","/",m.encode())
             r = conn.getresponse()
 
-           # conn.request("POST","/getM",n_name.encode())
-           # r = conn.getresponse()
-           # d = r.read().decode()
-
     except KeyboardInterrupt as error:
-        print("Keyboard Interruption... bye bye: {}".format(str(error)))
+        print("Keyboard Interruption... bye bye")
         conn.close()
         sys.exit()
 
