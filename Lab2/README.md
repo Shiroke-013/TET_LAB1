@@ -49,7 +49,7 @@ Despues de que el servidor este corriendo se puede poner a correr los diferentes
 $ python3 Chat_Client.py "IP_publica del Servidor" "El_puerto_designado(1313)"
 ```
 
-Despues de que los clientes estén conectados (el servidor te lo hará saber con un mensaje), cada usuario podrá elegir un "Nickname" por el cuál será identificado en el chat por los otros usuarios, después de esto se podrán mensajear entre ellos.
+Despues de ejecutar el anterior comando el usuario podrá elegir un "Nickname" por el cuál será identificado en el chat por los otros usuarios, después de esto el "Nickname" será registrado en el servidor para que ningún otro usuario que se quiera conectar puede utilizar este mismo, ellos clientes estén conectados (el servidor te lo hará saber con un mensaje), después de esto se podrán mensajear entre ellos.
 
 Para cerrar la sesión de los clientes al igual que la del servidor se puede utilizar el comando Ctrl + C.
 
