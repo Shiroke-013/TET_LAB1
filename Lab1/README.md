@@ -34,7 +34,7 @@ Para la ejecución de la aplicación (chat) se debe de acceder a las diferentes 
 
 ```sh
 $ ssh -i "Par de claves utilizado para crear las instancias(*.pem)" ec2-user@"DNS de IPv4 pública de la instancia"
-$ git clone https://github.com/Shiroke-013/TET_LAB1.git
+$ git clone https://github.com/Shiroke-013/TET_LABS.git
 ```
 
 
