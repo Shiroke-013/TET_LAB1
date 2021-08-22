@@ -10,9 +10,7 @@ def getting_messages():
         r = conn.getresponse()
         d = r.read().decode()
         print(d)
-        print("Sleeping...")
         time.sleep(3)
-        print("Awake")
 
 if len(sys.argv) != 3:
     print ("How to make it work: script, IP address, PORT number")
