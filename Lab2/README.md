@@ -52,3 +52,12 @@ $ python3 Chat_Client.py "IP_publica del Servidor" "El_puerto_designado(1313)"
 Despues de que los clientes estén conectados (el servidor te lo hará saber con un mensaje), se podrán mensajear entre ellos.
 
 Para cerrar la sesión de los clientes al igual que la del servidor se puede utilizar el comando Ctrl + C.
+
+
+## Referencias
+Para el desarrollo de este laboratorio se tomaron en consideración los siguientes enlaces:
+* https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol#Technical_overview
+* https://docs.python.org/3/library/http.client.html#http.client.HTTPResponse
+* https://docs.python.org/3/library/http.server.html#http.server.SimpleHTTPRequestHandler.do_GET
+* https://www.geeksforgeeks.org/http-request-methods-python-requests/
+* https://gist.github.com/junian/99e402db918cbe150002dc8c6736feb6
