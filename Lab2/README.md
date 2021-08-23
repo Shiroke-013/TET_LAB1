@@ -17,6 +17,9 @@ El protocolo HTTP tiene métodos como lo son: GET(utilizado para obtener informa
 
 ***Errores del Servidor*** siendo el formato de estas: ***5XX***. Indican casos en los que el servidor se da cuenta de que ha cometido un error o es incapaz de realizar la solicitud.
 
+Para el caso de esta aplicación tanto el envio como obtención de los mensajes del chat grupal se hacen con el método POST. Gracias a los métodos que tienen las instancias de **HTTPConnection** el uso del método request hace fácil el aclarar en sus argumentos: el m'etod method, url, body=None, headers={}, *, encode_chunked=False)
+
+
 ## Instalación
 Para ver la aplicación en funcionamiento se deben de instanciar como minimo 3 instancias EC2 en AWS, siendo una de estas la que actuará como servidor, que además se le debe de asociar una IP elástica, y las otras como clientes que enviaran mensajes en el chat. Se usarán dos grupos de seguridad (SG), uno para el servidor y otro para los clientes, el SG del servidor debe tener una regla de entrada con el tipo en ***Custom TCP***, para este caso se seleccionó el puerto 1313, abierto para cualquier IP, pero se puede escoger uno diferente siendo mayor al puerto 1100. Asimismo el SG de los clientes es casi igual al del servidor con la diferencia de que no debe estar abierto para cualquier IP, unicamente debe estar abierto para la IP pública del Servidor.
 
