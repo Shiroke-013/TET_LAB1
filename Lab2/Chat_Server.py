@@ -69,13 +69,17 @@ class message_Handler(BaseHTTPRequestHandler):
             self.send_response(200)
             self.send_header('content-type','text/html')
             self.end_headers()
-            #self.wfile.write('POST'.encode())
 
 
 def main():
-    server = HTTPServer((IP_ADDRESS,PORT),message_Handler)
-    print("Server running on port {}".format(PORT))
-    server.serve_forever()
+    try:
+        server = HTTPServer((IP_ADDRESS,PORT),message_Handler)
+        print("Server running on port {}".format(PORT))
+        server.serve_forever()
+        
+    except KeyboardInterrupt as error:
+        print("Keyboard Interruption... bye bye")
+        sys.exit()
 
 if __name__ == "__main__":
     main()
