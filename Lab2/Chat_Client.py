@@ -46,7 +46,7 @@ thread.start()
 
 while True:
     try:
-        m = input("{}: ".format(n_name))
+        m = input()        
         if len(m) != 0:
             m =  n_name + ": " + m
             conn.request("POST","/",m.encode())
