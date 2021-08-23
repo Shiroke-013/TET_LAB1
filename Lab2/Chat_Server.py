@@ -25,7 +25,7 @@ class message_Handler(BaseHTTPRequestHandler):
         n_name = ""
         m = msgs.get(n_name)
         msgs[n_name] = ""
-        msg = "nada"
+        msg = "Nothing"
         self.wfile.write(msg.encode())
 
     # Definition on method POST, what it should do if it is received.
