@@ -17,7 +17,7 @@ El protocolo HTTP tiene métodos como lo son: GET(utilizado para obtener informa
 
 ***Errores del Servidor*** siendo el formato de estas: ***5XX***. Indican casos en los que el servidor se da cuenta de que ha cometido un error o es incapaz de realizar la solicitud.
 
-Para el caso de esta aplicación tanto el envio como obtención de los mensajes del chat grupal se hacen con el método POST. Gracias a los métodos que tienen las instancias de **HTTPConnection** el uso del método request hace fácil el aclarar en sus argumentos: el m'etod method, url, body=None, headers={}, *, encode_chunked=False)
+Para el caso de esta aplicación tanto el envio como obtención de los mensajes del chat grupal se hacen con el método POST. Gracias a los métodos que tienen las instancias de **HTTPConnection** el uso del método request hace fácil el aclarar en sus argumentos: el método, el url, el cuerpo (por defecto es "None"), los encabezados (por defecto es: {}), entre otros. Haciendo posible así que en nuestro código del Cliente se digo cuál es el url con su cuerpo, para así ser procesado después por el código del Servidor y saber actuar sobre lo que se quiere.
 
 
 ## Instalación
