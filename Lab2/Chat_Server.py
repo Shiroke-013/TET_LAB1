@@ -15,7 +15,7 @@ PORT = int(sys.argv[2])
 
 msgs={}
 
-class message_Handler(BaseHTTPRequestHandler):
+class MessageHandler(BaseHTTPRequestHandler):
 
     # Definition on method POST, what it should do if it is received.
     def do_GET(self):
@@ -73,7 +73,7 @@ class message_Handler(BaseHTTPRequestHandler):
 
 def main():
     try:
-        server = HTTPServer((IP_ADDRESS,PORT),message_Handler)
+        server = HTTPServer((IP_ADDRESS,PORT),MessageHandler)
         print("Server running on port {}".format(PORT))
         server.serve_forever()
         
