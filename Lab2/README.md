@@ -74,3 +74,4 @@ Para el desarrollo de este laboratorio se tomaron en consideración los siguient
 * https://www.geeksforgeeks.org/http-request-methods-python-requests/
 * https://gist.github.com/junian/99e402db918cbe150002dc8c6736feb6
 * https://www.restapitutorial.com/httpstatuscodes.html
+* https://realpython.com/intro-to-python-threading/#what-is-a-thread
