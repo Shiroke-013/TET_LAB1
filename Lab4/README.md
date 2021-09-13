@@ -3,7 +3,7 @@
 ## Autor: Andrés Darío Chaves Pérez 
 
 ## Descripción
-
+En el presente laboratorio se evidenciará el uso de un middleware(RabbitMQ) para la simulación de un gestor de tareas de un sistema distribuido.
 
 ## Instalación
 
