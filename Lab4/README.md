@@ -5,6 +5,11 @@
 ## Descripción
 En el presente laboratorio se evidenciará el uso de un middleware(RabbitMQ) para la simulación de un gestor de tareas de un sistema distribuido.
 
+En este laboratorio se puede evidenciar el uso de un middleware para el envio de tareas indepenidentes a diferentes consumidores teniendo en cuanta que las conexiones de los objetos pueden ser sincronicas o asincronicas. Para esto usaremos un MOM llamado RabittMQ usando el protocolo de MAQP 0-9-1 y python3.
+
+## Prerrequisitos
+* El MOM debe de estar configurado previante, para esto se usó el archivo PDF del laboratoriio 4 que está también en el respositorio.
+
 ## Instalación
 
 
