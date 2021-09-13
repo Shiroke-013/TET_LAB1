@@ -24,7 +24,7 @@ while True:
         t = sys.stdin.readline()
         if (t != ''):
             channel.basic_publish(exchange='my_exchange', routing_key='test', body=t)
-            print('{t} taks send succesfully!')
+            print('Taks send succesfully!')
             
     except KeyboardInterrupt:
         print('Keyboard Interrupt bye bye... Shutting Down')
