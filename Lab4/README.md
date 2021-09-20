@@ -46,13 +46,13 @@ $ git clone https://github.com/Shiroke-013/TET_LABS.git
 ```
 
 
-Despues de esto se debe de ingresar hasta la carpeta de: Lab4 y ejecutar el "Producer", teniendo en cuenta que el orden de los argumentos para ejecutar el script son:
+Despues de esto se debe de ingresar hasta la carpeta de: Lab4 y ejecutar el "Producer", teniendo en cuenta que el orden de los argumentos para ejecutar el script son los siguientes y que la IP pública del servidor es 52.203.182.145, el usuario y contraseña del RabbitMQ es el mismo de los pasos del pdf:
 
 ```sh
 $ python3 appProducer.py "IP_publica del Servidor" "El_puerto_designado(1313)" "Usuario de RabbitMQ" "Contraseña de RabbitMQ"
 ```
 
-Despues de esto se debe ejecutar el "Consumer" en minimo 2 instancias de AWS para ver su funcionamiento, teniendo en cuenta que el orden de los argumentos para ejecutar el script son:
+Despues de esto se debe ejecutar el "Consumer" en minimo 2 instancias de AWS para ver su funcionamiento, teniendo en cuenta que el orden de los argumentos para ejecutar el script son los siguientes y que la IP pública del servidor es 52.203.182.145:
 ```sh
 $ python3 appConsumer.py "IP_publica del Servidor" "El_puerto_designado(1313)" "Usuario de RabbitMQ" "Contraseña de RabbitMQ"
 ```
