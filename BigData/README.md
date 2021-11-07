@@ -37,11 +37,15 @@ Un cuaderno basado en la web completamente abierto que permite el análisis inte
 
 Apache Zeppelin es un nuevo cuaderno basado en la web y en fase de incubación que aporta a Hadoop y Spark funciones de ingestión de datos, exploración de datos, visualización, intercambio y colaboración.
 
+### Fotos de Reproducción del Lab0 
+
+
 **NOTA: Este laboratorio tenia como objetivo aprender a crear un cluster EMR con herramientas como los Hive, JupyterHub y Zeppeling, además de hacer uso de un bucket S3 de AWS desde este cluster.**
 
 ## Laboratorio 1
 
-
+### ¿Qué es Hadoop?
+Hadoop es un marco de trabajo de código abierto basado en Java que se utiliza para almacenar y procesar big data. Los datos se almacenan en servidores de bajo coste que funcionan como clusters. Su sistema de archivos distribuido permite el procesamiento concurrente y la tolerancia a fallos. Desarrollado por Doug Cutting y Michael J. Cafarella, Hadoop utiliza el modelo de programación MapReduce para un almacenamiento y recuperación más rápidos de los datos de sus nodos. El marco de trabajo está gestionado por la Apache Software Foundation y está licenciado bajo la Apache License 2.0.
 
 ### Referencias
 - https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html
@@ -49,4 +53,4 @@ Apache Zeppelin es un nuevo cuaderno basado en la web y en fase de incubación q
 - https://aws.amazon.com/es/big-data/what-is-hive/
 - https://professorkazarinoff.github.io/jupyterhub-engr101/what_is_jupyterhub/
 - https://www.cloudera.com/products/open-source/apache-hadoop/apache-zeppelin.html
-- 
+- https://www.talend.com/resources/what-is-hadoop/
