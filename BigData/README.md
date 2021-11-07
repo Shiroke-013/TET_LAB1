@@ -41,11 +41,11 @@ Apache Zeppelin es un nuevo cuaderno basado en la web y en fase de incubación q
 ![Lab0-1](Fotos/Lab0-1.png)
 
 ![Lab0-1](Fotos/Lab0-2.png)
----------------------------
+
 ![Lab0-1](Fotos/Lab0-3.png)
----------------------------
+
 ![Lab0-1](Fotos/Lab0-4.png)
----------------------------
+
 ![Lab0-1](Fotos/Lab0-5.png)
 
 ![Lab0-1](Fotos/Lab0-6.png)
