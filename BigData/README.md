@@ -1,6 +1,6 @@
 # TET-LabBigData
 
-## Autores: Andrés Darío Chaves Pérez y Catalina López Roldán
+## Autores: Andrés Darío Chaves Pérez
 ### Prerrequisitos:
 
     Cluster De EMR configurado e iniciado.
