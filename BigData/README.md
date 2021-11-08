@@ -57,6 +57,24 @@ Apache Zeppelin es un nuevo cuaderno basado en la web y en fase de incubación q
 ### ¿Qué es Hadoop?
 Hadoop es un marco de trabajo de código abierto basado en Java que se utiliza para almacenar y procesar big data. Los datos se almacenan en servidores de bajo coste que funcionan como clusters. Su sistema de archivos distribuido permite el procesamiento concurrente y la tolerancia a fallos. Desarrollado por Doug Cutting y Michael J. Cafarella, Hadoop utiliza el modelo de programación MapReduce para un almacenamiento y recuperación más rápidos de los datos de sus nodos. El marco de trabajo está gestionado por la Apache Software Foundation y está licenciado bajo la Apache License 2.0.
 
+### ¿Qué es HDFS?
+HDFS es un sistema de archivos distribuido que maneja grandes conjuntos de datos que se ejecutan en hardware básico. Se utiliza para escalar un solo clúster de Apache Hadoop a cientos (e incluso miles) de nodos. HDFS es uno de los componentes principales de Apache Hadoop, los otros son MapReduce e YARN. HDFS no debe confundirse ni reemplazarse por Apache HBase, que es un sistema de administración de bases de datos no relacionales orientado a columnas que se ubica en la parte superior de HDFS y puede soportar mejor las necesidades de datos en tiempo real con su motor de procesamiento en memoria.
+
+### Fotos de Reproducción del Lab0 
+![Lab1-1](Fotos/Lab1-1.png)
+
+![Lab1-2](Fotos/Lab 1-2.png)
+
+![Lab1-3](Fotos/Lab 1-3.png)
+
+![Lab1-4](Fotos/Lab 1-4.png)
+
+![Lab1-5](Fotos/Lab 1-5.png)
+
+![Lab1-6](Fotos/Lab 1-6.png)
+
+![Lab1-7](Fotos/Lab 1-7.png)
+
 ### Referencias
 - https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html
 - https://blog.lightspin.io/how-to-access-aws-s3-buckets
@@ -64,3 +82,4 @@ Hadoop es un marco de trabajo de código abierto basado en Java que se utiliza p
 - https://professorkazarinoff.github.io/jupyterhub-engr101/what_is_jupyterhub/
 - https://www.cloudera.com/products/open-source/apache-hadoop/apache-zeppelin.html
 - https://www.talend.com/resources/what-is-hadoop/
+- https://www.ibm.com/topics/hdfs
