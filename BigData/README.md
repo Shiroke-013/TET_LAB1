@@ -61,7 +61,7 @@ Hadoop es un marco de trabajo de código abierto basado en Java que se utiliza p
 HDFS es un sistema de archivos distribuido que maneja grandes conjuntos de datos que se ejecutan en hardware básico. Se utiliza para escalar un solo clúster de Apache Hadoop a cientos (e incluso miles) de nodos. HDFS es uno de los componentes principales de Apache Hadoop, los otros son MapReduce e YARN. HDFS no debe confundirse ni reemplazarse por Apache HBase, que es un sistema de administración de bases de datos no relacionales orientado a columnas que se ubica en la parte superior de HDFS y puede soportar mejor las necesidades de datos en tiempo real con su motor de procesamiento en memoria.
 
 ### Fotos de Reproducción del Lab0 
-![Lab1-1](Fotos/Lab1-1.png)
+![Lab1-1](Fotos/Lab 1-1.png)
 
 ![Lab1-2](Fotos/Lab 1-2.png)
 
