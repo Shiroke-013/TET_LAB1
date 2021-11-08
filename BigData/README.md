@@ -75,6 +75,22 @@ HDFS es un sistema de archivos distribuido que maneja grandes conjuntos de datos
 
 ![Lab1-1](Fotos/Lab1-7.png)
 
+
+## Laboratorio 2
+### ¿Qué es MRJOB?
+mrjob es la famosa biblioteca de Python para MapReduce desarrollada por YELP. La biblioteca ayuda a los desarrolladores a escribir código MapReduce utilizando un lenguaje de programación Python. Los desarrolladores pueden probar el código Python de MapReduce escrito con mrjob localmente en su sistema o en la nube usando Amazon EMR (Elastic MapReduce). Amazon EMR es un servicio web basado en la nube proporcionado por Amazon Web Services para fines de Big Data. mrjob es actualmente un marco activo para la programación de MapReduce o trabajos de transmisión de Hadoop y tiene un buen soporte de documentos para Hadoop con python que cualquier otra biblioteca o marco disponible actualmente. Con mrjob, podemos escribir código para Mapper y Reducer en una sola clase. En caso de que no tengamos Hadoop instalado, también podemos probar el programa mrjob en nuestro entorno de sistema local.
+
+### ¿Qué es MapReduce?
+MapReduce es un paradigma de programación que permite una escalabilidad masiva en cientos o miles de servidores en un clúster de Hadoop. Como componente de procesamiento, MapReduce es el corazón de Apache Hadoop. El término "MapReduce" se refiere a dos tareas separadas y distintas que realizan los programas Hadoop. El primero es el trabajo de mapa, que toma un conjunto de datos y lo convierte en otro conjunto de datos, donde los elementos individuales se dividen en tuplas (pares clave / valor).
+
+El trabajo de reducción toma la salida de un mapa como entrada y combina esas tuplas de datos en un conjunto más pequeño de tuplas. Como implica la secuencia del nombre MapReduce, el trabajo de reducción siempre se realiza después del trabajo de mapa.
+
+La programación de MapReduce ofrece varios beneficios para ayudarlo a obtener información valiosa de su big data:
+   - Escalabilidad. Las empresas pueden procesar petabytes de datos almacenados en el sistema de archivos distribuido de Hadoop (HDFS).
+   - Flexibilidad. Hadoop permite un acceso más fácil a múltiples fuentes de datos y múltiples tipos de datos.
+   - Velocidad. Con procesamiento paralelo y movimiento de datos mínimo, Hadoop ofrece un procesamiento rápido de cantidades masivas de datos.
+   - Sencillo. Los desarrolladores pueden escribir código en una variedad de lenguajes, incluidos Java, C ++ y Python.
+
 ### Referencias
 - https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html
 - https://blog.lightspin.io/how-to-access-aws-s3-buckets
@@ -83,3 +99,6 @@ HDFS es un sistema de archivos distribuido que maneja grandes conjuntos de datos
 - https://www.cloudera.com/products/open-source/apache-hadoop/apache-zeppelin.html
 - https://www.talend.com/resources/what-is-hadoop/
 - https://www.ibm.com/topics/hdfs
+- https://www.geeksforgeeks.org/hadoop-mrjob-python-library-for-mapreduce-with-example/
+- https://www.ibm.com/topics/mapreduce
+- https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
