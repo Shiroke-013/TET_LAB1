@@ -63,17 +63,17 @@ HDFS es un sistema de archivos distribuido que maneja grandes conjuntos de datos
 ### Fotos de Reproducción del Lab0 
 ![Lab1-1](Fotos/Lab 1-1.png)
 
-![Lab1-2](Fotos/Lab 1-2.png)
+![Lab1-1](Fotos/Lab 1-2.png)
 
-![Lab1-3](Fotos/Lab 1-3.png)
+![Lab1-1](Fotos/Lab 1-3.png)
 
-![Lab1-4](Fotos/Lab 1-4.png)
+![Lab1-1](Fotos/Lab 1-4.png)
 
-![Lab1-5](Fotos/Lab 1-5.png)
+![Lab1-1](Fotos/Lab 1-5.png)
 
-![Lab1-6](Fotos/Lab 1-6.png)
+![Lab1-1](Fotos/Lab 1-6.png)
 
-![Lab1-7](Fotos/Lab 1-7.png)
+![Lab1-1](Fotos/Lab 1-7.png)
 
 ### Referencias
 - https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html
