@@ -60,20 +60,18 @@ Hadoop es un marco de trabajo de código abierto basado en Java que se utiliza p
 ### ¿Qué es HDFS?
 HDFS es un sistema de archivos distribuido que maneja grandes conjuntos de datos que se ejecutan en hardware básico. Se utiliza para escalar un solo clúster de Apache Hadoop a cientos (e incluso miles) de nodos. HDFS es uno de los componentes principales de Apache Hadoop, los otros son MapReduce e YARN. HDFS no debe confundirse ni reemplazarse por Apache HBase, que es un sistema de administración de bases de datos no relacionales orientado a columnas que se ubica en la parte superior de HDFS y puede soportar mejor las necesidades de datos en tiempo real con su motor de procesamiento en memoria.
 
+### Reproducción del Lab1
+El objetivo de este laboratorio es aprender el funcionamiento del *"file system"* de *"hadoop"* por lo cual necesitaremos clonar el repositorio de la clase, el cual contiene una carpeta llamada: bigdata, que en su interior contiene varios *"datasets"* los cuales copiaremos en el *"file system"* de *"hadoop*" para posteriormente pasarlos a un *"bucket"* S3.
+
+Inicialmente se necesiatara conectarse al cluster via ssh, el comando es el siguiente y se debe reemplazar la información por la de su cluster:
+``` java
+ssh -i "Nombre del *"KeyPair*"".pem hadoop@ec2-54-162-15-220.compute-1.amazonaws.com
+```
+
+
+Para parender como funciona en el file system de hadoop vamos a clonar el repositorio de la clase link Que contiene unos data sets en el directorio de bigdata, esto con el fin de tenerlos de manera local, para esto se corren los siguentes comandos en el directorio home:
+
 ### Fotos de Reproducción del Lab1
-![Lab1-1](Fotos/Lab1-1.png)
-
-![Lab1-1](Fotos/Lab1-2.png)
-
-![Lab1-1](Fotos/Lab1-3.png)
-
-![Lab1-1](Fotos/Lab1-4.png)
-
-![Lab1-1](Fotos/Lab1-5.png)
-
-![Lab1-1](Fotos/Lab1-6.png)
-
-![Lab1-1](Fotos/Lab1-7.png)
 
 
 ## Laboratorio 2
