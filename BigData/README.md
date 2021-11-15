@@ -116,6 +116,28 @@ La programación de MapReduce ofrece varios beneficios para ayudarlo a obtener i
    - Velocidad. Con procesamiento paralelo y movimiento de datos mínimo, Hadoop ofrece un procesamiento rápido de cantidades masivas de datos.
    - Sencillo. Los desarrolladores pueden escribir código en una variedad de lenguajes, incluidos Java, C ++ y Python.
 
+### Reproducción del Lab2
+Conectados al cluster y desde el directorio `home`, debemos de asegurarnos tener instalado *"python3"* y *"mrjob"*:
+```java
+sudo yum install python3-pip
+sudo pip3 install mrjob
+```
+
+Ahora ejecutaremos WordCount de manera serial con python, para estos usaremos los arhcivos locales del repositorio que copiamos en el anterior laboratorio y desde el directorio "02-mapreduce" (Nos movemos a este directorio con el objetivo de tener archivos ejecutables a la mano) ejecutaremos lo siguiente:
+```java
+cd 02-mapreduce
+```
+``` java
+python wordcount-local.py ~/st0263_20212/bigdata/datasets/gutenberg-small/*.txt > salida-serial.txt
+```
+
+Ahora usaremos MapReduce y MRJOB, el comando es el siguiente:
+
+``` java
+python wordcount-mr.py ~/st0263_20212/bigdata/datasets/gutenberg-small/*.txt > salida-mr.txt
+```
+
+
 ### Referencias
 - https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html
 - https://blog.lightspin.io/how-to-access-aws-s3-buckets
