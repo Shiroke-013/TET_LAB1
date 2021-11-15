@@ -93,7 +93,13 @@ hadoop distcp /user/hadoop/datasets/* s3a://"Nombre de su Bucket"/datasets
 ```
 
 ### Fotos de Reproducción del Lab1
+![Lab1-1](Fotos/Lab1-0.png)
 
+![Lab1-1](Fotos/Lab1-1.png)
+
+![Lab1-1](Fotos/Lab1-2.png)
+
+![Lab1-1](Fotos/Lab1-3.png)
 
 ## Laboratorio 2
 ### ¿Qué es MRJOB?
