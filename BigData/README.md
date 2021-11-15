@@ -65,11 +65,32 @@ El objetivo de este laboratorio es aprender el funcionamiento del *"file system"
 
 Inicialmente se necesiatara conectarse al cluster via ssh, el comando es el siguiente y se debe reemplazar la información por la de su cluster:
 ``` java
-ssh -i "Nombre del *"KeyPair*"".pem hadoop@ec2-54-162-15-220.compute-1.amazonaws.com
+ssh -i "Nombre del KeyPair".pem hadoop@ec2-54-162-15-220.compute-1.amazonaws.com
+```
+Y después se ejecutaran los siguientes comandos que instalan Git y copian el repositorio de la clase:
+
+``` java
+sudo yum install git
+git clone https://github.com/st0263eafit/st0263_20212
 ```
 
+Ahora accederemos a la carpeta donde encontraremos todos los *"datasets"* y listaremos su contenido:
+```java
+cd st0263_20212/bigdata/datasets/
+ls
 
-Para parender como funciona en el file system de hadoop vamos a clonar el repositorio de la clase link Que contiene unos data sets en el directorio de bigdata, esto con el fin de tenerlos de manera local, para esto se corren los siguentes comandos en el directorio home:
+```
+
+Evidenciando la existencia de los archivos, dentro de esta carpeta ejecutaremos los siguientes comandos, los cuales crearan una carpeta dentro del *"hadoop file system"* y luego copiaremos los datos locales a la carpeta que se creo:
+```java
+hdfs dfs -mkdir /user/hadoop/datasets
+hdfs dfs -copyFromLocal * /user/hadoop/datasets
+```
+
+En el momento, los archivos que copiamos se perderan una vez el *"cluster"* sea terminado, por lo cual ahoremos que los datos perduren sin importar que terminemos la instancia, haremos esto gracias a los *"buckets"* en S3 y ya que previamente se había creado uno, correremos el siguiente comando con los nombres que usted eligió para cada cosa:
+```java
+hadoop distcp /user/hadoop/datasets/* s3a://bigdatabucketadchavesp/datasets
+```
 
 ### Fotos de Reproducción del Lab1
 
