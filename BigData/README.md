@@ -3,7 +3,7 @@
 ## Autores: Andrés Darío Chaves Pérez
 ### Prerrequisitos:
 
-    Cluster De EMR configurado e iniciado.
+* Cluster De EMR configurado e iniciado.
 
 ## Laboratorio 0
 
