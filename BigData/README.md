@@ -89,7 +89,7 @@ hdfs dfs -copyFromLocal * /user/hadoop/datasets
 
 En el momento, los archivos que copiamos se perderan una vez el *"cluster"* sea terminado, por lo cual ahoremos que los datos perduren sin importar que terminemos la instancia, haremos esto gracias a los *"buckets"* en S3 y ya que previamente se había creado uno, correremos el siguiente comando con los nombres que usted eligió para cada cosa:
 ```java
-hadoop distcp /user/hadoop/datasets/* s3a://bigdatabucketadchavesp/datasets
+hadoop distcp /user/hadoop/datasets/* s3a://"Nombre de su Bucket"/datasets
 ```
 
 ### Fotos de Reproducción del Lab1
