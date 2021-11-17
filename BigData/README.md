@@ -147,9 +147,12 @@ Como segunda parte del Lab2, se pidió al estudiante hacer uno de los tres ejerc
       2. El salario promedio por Empleado
       3. Número de SE por Empleado que ha tenido a lo largo de la estadística
 
-   * Se crearon tres programas, uno para cada calculo, los cuales se pueden encontrar en: [Code](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Code). Estos programas se ejecutan de la misma manera que se ejecuto el ejemplo de WordCount usando MapReduce y MRJOB.
+   * Se crearon tres programas, uno para cada calculo, los cuales se pueden encontrar en: [Code](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Code) y el dataset usado en: [dataset](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Code/datasets). Estos programas se ejecutan de la misma manera que se ejecuto el ejemplo de WordCount usando MapReduce y MRJOB.
 
+### Fotos de Reproducción del Lab2 - Parte 1
+![Lab2-0](Fotos/Lab2-0.png)
 
+![Lab2-1](Fotos/Lab2-1.png)
 
 ### Referencias
 - https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html
