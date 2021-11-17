@@ -139,13 +139,15 @@ python wordcount-mr.py ~/st0263_20212/bigdata/datasets/gutenberg-small/*.txt > s
 
 Como segunda parte del Lab2, se pidió al estudiante hacer uno de los tres ejercicios propuestos usando MRJOB, en este caso se escogió realizar el primer ejercicio propuesto: 
 
-1- Se tiene un conjunto de datos, que representan el salario anual de los empleados formales en Colombia por sector económico, según la DIAN.
+1. Se tiene un conjunto de datos, que representan el salario anual de los empleados formales en Colombia por sector económico, según la DIAN.
 
-* Realizar un programa en Map/Reduce, con hadoop en Python o Java, que permita calcular:
+   * Realizar un programa en Map/Reduce, con hadoop en Python o Java, que permita calcular:
 
-1. El salario promedio por Sector Económico (SE)
-2. El salario promedio por Empleado
-3. Número de SE por Empleado que ha tenido a lo largo de la estadística
+      1. El salario promedio por Sector Económico (SE)
+      2. El salario promedio por Empleado
+      3. Número de SE por Empleado que ha tenido a lo largo de la estadística
+
+
 
 ### Referencias
 - https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html
