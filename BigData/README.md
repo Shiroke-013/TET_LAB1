@@ -147,6 +147,8 @@ Como segunda parte del Lab2, se pidió al estudiante hacer uno de los tres ejerc
       2. El salario promedio por Empleado
       3. Número de SE por Empleado que ha tenido a lo largo de la estadística
 
+   * Se crearon tres programas, uno para cada calculo, los cuales se pueden encontrar en: [Code](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Code). Estos programas se ejecutan de la misma manera que se ejecuto el ejemplo de WordCount usando MapReduce y MRJOB.
+
 
 
 ### Referencias
