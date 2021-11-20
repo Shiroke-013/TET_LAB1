@@ -172,7 +172,7 @@ pyspark
 >>> for tupla in wc.take(10):
 >>>     print(tupla)
 >>>     
-
+```
 
 [Imagen Shell PySpark.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-0)
 
@@ -187,6 +187,7 @@ La segunda forma hace que todo el resultado se guarde en un solo archivo de sál
 >>> wc.coalesce(1).saveAsTextFile("hdfs:///user/hadoop/tmp/wcout2")
 ```
 [Guardando archivos.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-1)
+
 Como habrá notado los datos se guardaron en Hue, por lo cuál para que no se pierdan se deberan pasar a S3, recordar que se hizo un procedimiento similar en el laboratorio 1. En la carpeta [Fotos.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos) las imagenes lab3-2 <-> lab3-5 muestran evidencia de como quedaron guardados los archivos en Hue y en S3.
 
 Se puede correr esto mismo desde el directorio local del cluster con python, el [script](https://github.com/st0263eafit/st0263_20212/blob/main/bigdata/03-spark/wc-pyspark.py) se encuentra en el repositorio de la materia y se le deben modificar las lineas pertinentes para despues ejecutarse con el siguiente comando:
