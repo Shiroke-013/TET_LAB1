@@ -161,7 +161,7 @@ Para este cluster se podrá utilizar el cluster de los laboratorios anteriores, 
 
 Se empezará el laboratorio conectandose via ssh al cluster en AWS EMR y utilizaremos el shell de Spark para python (PySpark) para contar las palabras de un dataset, que con el desarrollo de los otros laboratorios está en bucket de S3. Los comandos son los siguientes:
 
-´´´java
+´´´
 $ pyspark
 >>> files_rdd = sc.textFile("s3://"Nombre de su Bucket"/datasets/gutenberg-small/*.txt")
 >>> wc_unsort = files_rdd.flatMap(lambda line: line.split()).map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
@@ -192,7 +192,7 @@ spark-submit --master yarn --deploy-mode cluster wc-pyspark.py
 [Ejecutando HOME](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-6)
 
 Ahora se ejecuta lo mismo en un notebook de Zeppelin, por lo cual se deberá de crear una nota y el código posible para hacerlo es el siguiente, cambiando las lineas pertinentes en las cuales se aclara cuál es el bucket y dónde se guardará el resultado:
-```java
+```
 %spark.pyspark
 # WORDCOUNT COMPACTO
 files_rdd = sc.textFile("s3://"Nombre del bucket"/datsets/gutenberg-small/*.txt")
@@ -202,6 +202,7 @@ wc = wc_unsort.sortBy(lambda a: -a[1])
 for tupla in wc.take(10):
     print(tupla)
 wc.coalesce(1).saveAsTextFile("hdfs:///user/hadoop/tmpZeppelin/wcout1")
+
 ```
 [Creando note](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-7) - [Zeppelin code](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-8) - [Guardado](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-8)
 
