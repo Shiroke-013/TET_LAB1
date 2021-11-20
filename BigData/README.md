@@ -170,6 +170,7 @@ $ pyspark
 >>>     print(tupla)
 >>>     
 ´´´
+
 [Imagen Shell PySpark.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-0)
 
 Después de estas lineas se imprimiran los resultados del conteo de palabras y habrán dos opciones para guardar estos:
