@@ -161,38 +161,38 @@ Para este cluster se podrá utilizar el cluster de los laboratorios anteriores, 
 
 Se empezará el laboratorio conectandose via ssh al cluster en AWS EMR y utilizaremos el shell de Spark para python (PySpark) para contar las palabras de un dataset, que con el desarrollo de los otros laboratorios está en bucket de S3. Los comandos son los siguientes:
 
-´´´
+```java
 pyspark
-´´´
+```
 
-´´´
+```java
 >>> files_rdd = sc.textFile("s3://"Nombre de su Bucket"/datasets/gutenberg-small/*.txt")
 >>> wc_unsort = files_rdd.flatMap(lambda line: line.split()).map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
 >>> wc = wc_unsort.sortBy(lambda a: -a[1])
 >>> for tupla in wc.take(10):
 >>>     print(tupla)
 >>>     
-´´´
+
 
 [Imagen Shell PySpark.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-0)
 
 Después de estas lineas se imprimiran los resultados del conteo de palabras y habrán dos opciones para guardar estos:
 
 La primera forma es la manera por defecto en la cual *"WordCount"* salva un archivo por rdd: 
-´´´java
+```java
 >>> wc.saveAsTextFile("hdfs:///user/hadoop/tmp/wcout1")
-´´´
+```
 La segunda forma hace que todo el resultado se guarde en un solo archivo de sálida:
-´´´java
+```java
 >>> wc.coalesce(1).saveAsTextFile("hdfs:///user/hadoop/tmp/wcout2")
-´´´
+```
 [Guardando archivos.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-1)
 Como habrá notado los datos se guardaron en Hue, por lo cuál para que no se pierdan se deberan pasar a S3, recordar que se hizo un procedimiento similar en el laboratorio 1. En la carpeta [Fotos.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos) las imagenes lab3-2 <-> lab3-5 muestran evidencia de como quedaron guardados los archivos en Hue y en S3.
 
 Se puede correr esto mismo desde el directorio local del cluster con python, el [script](https://github.com/st0263eafit/st0263_20212/blob/main/bigdata/03-spark/wc-pyspark.py) se encuentra en el repositorio de la materia y se le deben modificar las lineas pertinentes para despues ejecutarse con el siguiente comando:
-´´´java
+```java
 spark-submit --master yarn --deploy-mode cluster wc-pyspark.py
-´´´
+```
 [Ejecutando HOME](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-6)
 
 Ahora se ejecuta lo mismo en un notebook de Zeppelin, por lo cual se deberá de crear una nota y el código posible para hacerlo es el siguiente, cambiando las lineas pertinentes en las cuales se aclara cuál es el bucket y dónde se guardará el resultado:
