@@ -159,6 +159,8 @@ Como segunda parte del Lab2, se pidió al estudiante hacer uno de los tres ejerc
 
 Para este cluster se podrá utilizar el cluster de los laboratorios anteriores, en caso de que haya terminado el cluster, puede clonarlo.
 
+
+### Shell PySpark
 Se empezará el laboratorio conectandose via ssh al cluster en AWS EMR y utilizaremos el shell de Spark para python (PySpark) para contar las palabras de un dataset, que con el desarrollo de los otros laboratorios está en bucket de S3. Los comandos son los siguientes:
 
 ```java
@@ -190,12 +192,16 @@ La segunda forma hace que todo el resultado se guarde en un solo archivo de sál
 
 Como habrá notado los datos se guardaron en Hue, por lo cuál para que no se pierdan se deberan pasar a S3, recordar que se hizo un procedimiento similar en el laboratorio 1. En la carpeta [Fotos.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos) las imagenes lab3-2 <-> lab3-5 muestran evidencia de como quedaron guardados los archivos en Hue y en S3.
 
+
+### Ejecutando Directorio Home
 Se puede correr esto mismo desde el directorio local del cluster con python, el [script](https://github.com/st0263eafit/st0263_20212/blob/main/bigdata/03-spark/wc-pyspark.py) se encuentra en el repositorio de la materia y se le deben modificar las lineas pertinentes para despues ejecutarse con el siguiente comando:
 ```java
 spark-submit --master yarn --deploy-mode cluster wc-pyspark.py
 ```
 [Ejecutando HOME](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-6.png)
 
+
+### Zeppelin
 Ahora se ejecuta lo mismo en un notebook de Zeppelin, por lo cual se deberá de crear una nota y el código posible para hacerlo es el siguiente, cambiando las lineas pertinentes en las cuales se aclara cuál es el bucket y dónde se guardará el resultado:
 ```
 %spark.pyspark
@@ -211,11 +217,13 @@ wc.coalesce(1).saveAsTextFile("hdfs:///user/hadoop/tmpZeppelin/wcout1")
 ```
 [Creando note](https://github.com/Shiroke-013/TET_LABS/blob/main/BigData/Fotos/Lab3-7.png) - [Zeppelin code](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-8.png) - [Guardado](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-9.png)
 
+
+### Jupyter Notebook
 Para terminar la parte 1 de este laboratorio se hará lo mismo en JupyterNotebook, se puede importar el siguiente archivo: [wordcount-spark.ipynb](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Lab3/JupyterNotebooks/wordcount-spark.ipynb) o crear un notebook y copiar el código. Además de esto para ejecutar el notebook se debe de cambiar el Kernel de este, se puede lograr en la barra de herramientas: *"Kernel"* -> *"Change kernel"* -> PySpark. 
 [Archivo Corriendo.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-10.png) - [Guardado](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-11.png)
 
 
-### Referencias
+## Referencias
 - https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html
 - https://blog.lightspin.io/how-to-access-aws-s3-buckets
 - https://aws.amazon.com/es/big-data/what-is-hive/
