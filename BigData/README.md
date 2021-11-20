@@ -147,7 +147,7 @@ Como segunda parte del Lab2, se pidió al estudiante hacer uno de los tres ejerc
       2. El salario promedio por Empleado
       3. Número de SE por Empleado que ha tenido a lo largo de la estadística
 
-   * Se crearon tres programas, uno para cada calculo, los cuales se pueden encontrar en: [Code](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Code) y el dataset usado en: [dataset](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Code/datasets). Estos programas se ejecutan de la misma manera que se ejecuto el ejemplo de WordCount usando MapReduce y MRJOB.
+   * Se crearon tres programas, uno para cada calculo, los cuales se pueden encontrar en: [Code](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Lab2/Code) y el dataset usado en: [dataset](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Lab2/Code/datasets). Estos programas se ejecutan de la misma manera que se ejecuto el ejemplo de WordCount usando MapReduce y MRJOB.
 
 ### Fotos de Reproducción del Lab2 - Parte 1
 ![Lab2-0](Fotos/Lab2-0.png)
@@ -156,6 +156,37 @@ Como segunda parte del Lab2, se pidió al estudiante hacer uno de los tres ejerc
 
 
 ## Laboratorio 3
+
+Para este cluster se podrá utilizar el cluster de los laboratorios anteriores, en caso de que haya terminado el cluster, puede clonarlo.
+
+Se empezará el laboratorio conectandose via ssh al cluster en AWS EMR y utilizaremos el shell de Spark para python (PySpark) para contar las palabras de un dataset, que con el desarrollo de los otros laboratorios está en bucket de S3. Los comandos son los siguientes:
+
+´´´java
+$ pyspark
+>>> files_rdd = sc.textFile("s3://"Nombre de su Bucket"/datasets/gutenberg-small/*.txt")
+>>> wc_unsort = files_rdd.flatMap(lambda line: line.split()).map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
+>>> wc = wc_unsort.sortBy(lambda a: -a[1])
+>>> for tupla in wc.take(10):
+>>>     print(tupla)
+>>>     
+´´´
+[Imagen Shell PySpark.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-0)
+
+Después de estas lineas se imprimiran los resultados del conteo de palabras y habrán dos opciones para guardar estos:
+
+La primera forma es la manera por defecto en la cual *"WordCount"* salva un archivo por rdd: 
+´´´java
+>>> wc.saveAsTextFile("hdfs:///user/hadoop/tmp/wcout1")
+´´´
+La segunda forma hace que todo el resultado se guarde en un solo archivo de sálida:
+´´´java
+>>> wc.coalesce(1).saveAsTextFile("hdfs:///user/hadoop/tmp/wcout2")
+´´´
+[Guardando archivos.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-1)
+Como habrá notado los datos se guardaron en Hue, por lo cuál para que no se pierdan se deberan pasar a S3, recordar que se hizo un procedimiento similar en el laboratorio 1. En la carpeta [Fotos.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos) las imagenes lab3-2 <-> lab3-5 muestran evidencia de como quedaron guardados los archivos en Hue y en S3.
+
+
+
 
 
 
@@ -170,3 +201,4 @@ Como segunda parte del Lab2, se pidió al estudiante hacer uno de los tres ejerc
 - https://www.geeksforgeeks.org/hadoop-mrjob-python-library-for-mapreduce-with-example/
 - https://www.ibm.com/topics/mapreduce
 - https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
+- https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-jupyterhub-install-kernels-libs.html
