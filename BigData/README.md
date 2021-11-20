@@ -247,3 +247,4 @@ Cabe agregar que como base para la realización de esta actividad se utilizará 
 - https://www.ibm.com/topics/mapreduce
 - https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax
 - https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-jupyterhub-install-kernels-libs.html
+- https://towardsdatascience.com/5-ways-to-add-a-new-column-in-a-pyspark-dataframe-4e75c2fd8c08
