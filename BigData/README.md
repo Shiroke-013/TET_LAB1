@@ -147,7 +147,7 @@ Como segunda parte del Lab2, se pidió al estudiante hacer uno de los tres ejerc
       2. El salario promedio por Empleado
       3. Número de SE por Empleado que ha tenido a lo largo de la estadística
 
-   * Se crearon tres programas, uno para cada calculo, los cuales se pueden encontrar en: [Code](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Lab2/Code) y el dataset usado en: [dataset](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Lab2/Code/datasets). Estos programas se ejecutan de la misma manera que se ejecuto el ejemplo de WordCount usando MapReduce y MRJOB.
+   * Se crearon tres programas, uno para cada calculo, los cuales se pueden encontrar en: [Code](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Lab2/Code) y el dataset usado en: [dataset](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Lab2/datasets). Estos programas se ejecutan de la misma manera que se ejecuto el ejemplo de WordCount usando MapReduce y MRJOB.
 
 ### Fotos de Reproducción del Lab2 - Parte 1
 ![Lab2-0](Fotos/Lab2-0.png)
@@ -185,9 +185,28 @@ La segunda forma hace que todo el resultado se guarde en un solo archivo de sál
 [Guardando archivos.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-1)
 Como habrá notado los datos se guardaron en Hue, por lo cuál para que no se pierdan se deberan pasar a S3, recordar que se hizo un procedimiento similar en el laboratorio 1. En la carpeta [Fotos.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos) las imagenes lab3-2 <-> lab3-5 muestran evidencia de como quedaron guardados los archivos en Hue y en S3.
 
+Se puede correr esto mismo desde el directorio local del cluster con python, el [script](https://github.com/st0263eafit/st0263_20212/blob/main/bigdata/03-spark/wc-pyspark.py) se encuentra en el repositorio de la materia y se le deben modificar las lineas pertinentes para despues ejecutarse con el siguiente comando:
+´´´java
+spark-submit --master yarn --deploy-mode cluster wc-pyspark.py
+´´´
+[Ejecutando HOME](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-6)
 
+Ahora se ejecuta lo mismo en un notebook de Zeppelin, por lo cual se deberá de crear una nota y el código posible para hacerlo es el siguiente, cambiando las lineas pertinentes en las cuales se aclara cuál es el bucket y dónde se guardará el resultado:
+```java
+%spark.pyspark
+# WORDCOUNT COMPACTO
+files_rdd = sc.textFile("s3://"Nombre del bucket"/datsets/gutenberg-small/*.txt")
+#files_rdd = sc.textFile("hdfs:///user/hadoop/datasets/gutenberg-small/*.txt")
+wc_unsort = files_rdd.flatMap(lambda line: line.split()).map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
+wc = wc_unsort.sortBy(lambda a: -a[1])
+for tupla in wc.take(10):
+    print(tupla)
+wc.coalesce(1).saveAsTextFile("hdfs:///user/hadoop/tmpZeppelin/wcout1")
+```
+[Creando note](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-7) - [Zeppelin code](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-8) - [Guardado](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-8)
 
-
+Para terminar la parte 1 de este laboratorio se hará lo mismo en JupyterNotebook, se puede importar el siguiente archivo: [wordcount-spark.ipynb](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Lab3/JupyterNotebooks/wordcount-spark.ipynb) o crear un notebook y copiar el código. Además de esto para ejecutar el notebook se debe de cambiar el Kernel de este, se puede lograr en la barra de herramientas: *"Kernel"* -> *"Change kernel"* -> PySpark. 
+[Archivo Corriendo.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-10) - [Guardado.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-11)
 
 
 ### Referencias
