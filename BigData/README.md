@@ -162,7 +162,10 @@ Para este cluster se podrá utilizar el cluster de los laboratorios anteriores, 
 Se empezará el laboratorio conectandose via ssh al cluster en AWS EMR y utilizaremos el shell de Spark para python (PySpark) para contar las palabras de un dataset, que con el desarrollo de los otros laboratorios está en bucket de S3. Los comandos son los siguientes:
 
 ´´´
-$ pyspark
+pyspark
+´´´
+
+´´´
 >>> files_rdd = sc.textFile("s3://"Nombre de su Bucket"/datasets/gutenberg-small/*.txt")
 >>> wc_unsort = files_rdd.flatMap(lambda line: line.split()).map(lambda word: (word, 1)).reduceByKey(lambda a, b: a + b)
 >>> wc = wc_unsort.sortBy(lambda a: -a[1])
