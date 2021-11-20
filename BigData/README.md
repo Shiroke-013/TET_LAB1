@@ -159,8 +159,8 @@ Como segunda parte del Lab2, se pidió al estudiante hacer uno de los tres ejerc
 
 Para este cluster se podrá utilizar el cluster de los laboratorios anteriores, en caso de que haya terminado el cluster, puede clonarlo.
 
-
-### Shell PySpark
+### Parte 1
+#### Shell PySpark
 Se empezará el laboratorio conectandose via ssh al cluster en AWS EMR y utilizaremos el shell de Spark para python (PySpark) para contar las palabras de un dataset, que con el desarrollo de los otros laboratorios está en bucket de S3. Los comandos son los siguientes:
 
 ```java
@@ -176,7 +176,7 @@ pyspark
 >>>     
 ```
 
-[Imagen Shell PySpark.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-0.png)
+Evidencia: [Imagen Shell PySpark.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-0.png)
 
 Después de estas lineas se imprimiran los resultados del conteo de palabras y habrán dos opciones para guardar estos:
 
@@ -188,20 +188,20 @@ La segunda forma hace que todo el resultado se guarde en un solo archivo de sál
 ```java
 >>> wc.coalesce(1).saveAsTextFile("hdfs:///user/hadoop/tmp/wcout2")
 ```
-[Guardando archivos.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-1.png)
+Evidencia: [Guardando archivos.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-1.png)
 
 Como habrá notado los datos se guardaron en Hue, por lo cuál para que no se pierdan se deberan pasar a S3, recordar que se hizo un procedimiento similar en el laboratorio 1. En la carpeta [Fotos.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos) las imagenes lab3-2 <-> lab3-5 muestran evidencia de como quedaron guardados los archivos en Hue y en S3.
 
 
-### Ejecutando Directorio Home
+#### Ejecutando Directorio Home
 Se puede correr esto mismo desde el directorio local del cluster con python, el [script](https://github.com/st0263eafit/st0263_20212/blob/main/bigdata/03-spark/wc-pyspark.py) se encuentra en el repositorio de la materia y se le deben modificar las lineas pertinentes para despues ejecutarse con el siguiente comando:
 ```java
 spark-submit --master yarn --deploy-mode cluster wc-pyspark.py
 ```
-[Ejecutando HOME](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-6.png)
+Evidencia: [Ejecutando HOME](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-6.png)
 
 
-### Zeppelin
+#### Zeppelin
 Ahora se ejecuta lo mismo en un notebook de Zeppelin, por lo cual se deberá de crear una nota y el código posible para hacerlo es el siguiente, cambiando las lineas pertinentes en las cuales se aclara cuál es el bucket y dónde se guardará el resultado:
 ```
 %spark.pyspark
@@ -215,13 +215,25 @@ for tupla in wc.take(10):
 wc.coalesce(1).saveAsTextFile("hdfs:///user/hadoop/tmpZeppelin/wcout1")
 
 ```
-[Creando note](https://github.com/Shiroke-013/TET_LABS/blob/main/BigData/Fotos/Lab3-7.png) - [Zeppelin code](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-8.png) - [Guardado](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-9.png)
+Evidencia: [Creando note](https://github.com/Shiroke-013/TET_LABS/blob/main/BigData/Fotos/Lab3-7.png) - [Zeppelin code](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-8.png) - [Guardado](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-9.png)
 
 
-### Jupyter Notebook
+#### Jupyter Notebook
 Para terminar la parte 1 de este laboratorio se hará lo mismo en JupyterNotebook, se puede importar el siguiente archivo: [wordcount-spark.ipynb](https://github.com/Shiroke-013/TET_LABS/blob/main/BigData/Lab3/JupyterNotebooks/) o crear un notebook y copiar el código. Además de esto para ejecutar el notebook se debe de cambiar el Kernel de este, se puede lograr en la barra de herramientas: *"Kernel"* -> *"Change kernel"* -> PySpark. 
-[Archivo Corriendo.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-10.png) - [Guardado](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-11.png)
+Evidencia: [Archivo Corriendo.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-10.png) - [Guardado](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-11.png)
 
+### Parte 2
+En esta parte del laboratorio se replicará, ejecutará y entenderá el notebook: [Data_processing_using_PySpark.ipynb](https://github.com/Shiroke-013/TET_LABS/tree/main/BigData/Lab3/JupyterNotebooks), utilizando el dataset: [sample_data.csv](https://github.com/Shiroke-013/TET_LABS/tree/main/BigData/Lab3/dataset).
+Para eso, utilizaremos el jupyter que nos ofrece AWS EMR al crear el cluster.
+Evidencia: 
+
+
+### Parte 3
+Como última parte del laboratorio se debería realizar una actividad a manera de aprendizaje, la cual se puede encontrar en el [repositorio del curso](https://github.com/st0263eafit/st0263_20212/blob/main/bigdata/lab3-2-pyspark.txt), con el obtejivo de afianzar los conceptos adquiridos en el entendimiento de la **"Parte 2"**. El dataset que se utilizará en esta actividad es uno con el conteo de los casos positivos del COVID-19 en Colombia , el cual se puede encontrar en su última versión ejecutando el comando:
+```java
+wget https://www.datos.gov.co/api/views/gt2j-8ykr/rows.csv?accessType=DOWNLOAD
+```
+Cabe agregar que como base para la realización de esta actividad se utilizará el notebook: [Data_processing_using_PySpark.ipynb](https://github.com/Shiroke-013/TET_LABS/tree/main/BigData/Lab3/JupyterNotebooks).
 
 ## Referencias
 - https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html
