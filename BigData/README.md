@@ -259,6 +259,10 @@ wget https://www.datos.gov.co/api/views/gt2j-8ykr/rows.csv?accessType=DOWNLOAD
 ```
 Cabe agregar que como base para la realización de esta actividad se utilizará el notebook: [Data_processing_using_PySpark.ipynb](https://github.com/Shiroke-013/TET_LABS/tree/main/BigData/Lab3/JupyterNotebooks).
 
+El notebook que se utilizo para realización es el siguiente: [Parte3-Lab3-AC.ipynb](https://github.com/Shiroke-013/TET_LABS/tree/main/BigData/Lab3/JupyterNotebooks), dentro de él se tiene organizado por titulos los puntos de la parte 3. Al final de este se guardan los datos en S3.
+
+Evidencia: [Archivos Guardados en S3.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-15.png)
+
 ## Referencias
 - https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html
 - https://blog.lightspin.io/how-to-access-aws-s3-buckets
