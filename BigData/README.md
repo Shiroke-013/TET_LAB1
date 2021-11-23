@@ -225,7 +225,31 @@ Evidencia: [Archivo Corriendo.](https://github.com/Shiroke-013/TET_LABS/edit/mai
 ### Parte 2
 En esta parte del laboratorio se replicará, ejecutará y entenderá el notebook: [Data_processing_using_PySpark.ipynb](https://github.com/Shiroke-013/TET_LABS/tree/main/BigData/Lab3/JupyterNotebooks), utilizando el dataset: [sample_data.csv](https://github.com/Shiroke-013/TET_LABS/tree/main/BigData/Lab3/dataset).
 Para eso, utilizaremos el jupyter que nos ofrece AWS EMR al crear el cluster.
-Evidencia: 
+
+Para ejecutar este Jupyternotebook necesitaremos hacer unos cambios en este debido a que necesitamos instalar dos bibliotecas: Pandas y PyArrow, por lo cual se agregaran las siguientes lineas al Jupyter:
+
+Necesitaremos agregar la siguiente configuración en la primera linea del Jupyter:
+```java
+%%configure -f
+{
+    "conf": {
+        "spark.pyspark.python": "python3",
+        "spark.pyspark.virtualenv.enabled": "true",
+        "spark.pyspark.virtualenv.type":"native",
+        "spark.pyspark.virtualenv.bin.path":"/usr/bin/virtualenv"
+    }
+}
+```
+
+Y las siguientes lineas deben ponerse y ejecutarse antes de utilizar algún método de estas:
+```java
+sc.install_pypi_package("pandas==0.25.1")
+```
+```java
+sc.install_pypi_package("PyArrow==1.0.0")
+```
+
+Evidencia: [Configuración.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-10.png) - [Guardado](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-12.png) - [Instalando Bibliotecas.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-10.png) - [Guardado](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-13.png) - [Archivos Guardados en S3.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-10.png) - [Guardado](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-13.png)
 
 
 ### Parte 3
