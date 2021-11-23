@@ -257,6 +257,11 @@ Como última parte del laboratorio se debería realizar una actividad a manera d
 ```java
 wget https://www.datos.gov.co/api/views/gt2j-8ykr/rows.csv?accessType=DOWNLOAD
 ```
+Despues de descargado se puede cambiar el nombre del archivo para facilitar su uso, ejemplo:
+```java
+mv rows.csv?accessType=DOWNLOAD rows.csv
+```
+
 Cabe agregar que como base para la realización de esta actividad se utilizará el notebook: [Data_processing_using_PySpark.ipynb](https://github.com/Shiroke-013/TET_LABS/tree/main/BigData/Lab3/JupyterNotebooks).
 
 El notebook que se utilizo para realización es el siguiente: [Parte3-Lab3-AC.ipynb](https://github.com/Shiroke-013/TET_LABS/tree/main/BigData/Lab3/JupyterNotebooks), dentro de él se tiene organizado por titulos los puntos de la parte 3. Al final de este se guardan los datos en S3.
