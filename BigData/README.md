@@ -249,7 +249,7 @@ sc.install_pypi_package("pandas==0.25.1")
 sc.install_pypi_package("PyArrow==1.0.0")
 ```
 
-Evidencia: [Configuración.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-10.png) - [Guardado](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-12.png) - [Instalando Bibliotecas.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-10.png) - [Guardado](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-13.png) - [Archivos Guardados en S3.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-10.png) - [Guardado](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-13.png)
+Evidencia: [Configuración.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-12.png) - [Instalando Bibliotecas.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-13.png) - [Archivos Guardados en S3.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-14.png)
 
 
 ### Parte 3
