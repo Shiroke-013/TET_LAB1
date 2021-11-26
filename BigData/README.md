@@ -92,6 +92,7 @@ En el momento, los archivos que copiamos se perderan una vez el *"cluster"* sea 
 hadoop distcp /user/hadoop/datasets/* s3a://"Nombre de su Bucket"/datasets
 ```
 
+Evidencia: 
 ### Fotos de Reproducción del Lab1
 ![Lab1-1](Fotos/Lab1-0.png)
 
@@ -267,6 +268,14 @@ Cabe agregar que como base para la realización de esta actividad se utilizará 
 El notebook que se utilizo para realización es el siguiente: [Parte3-Lab3-AC.ipynb](https://github.com/Shiroke-013/TET_LABS/tree/main/BigData/Lab3/JupyterNotebooks), dentro de él se tiene organizado por titulos los puntos de la parte 3. Al final de este se guardan los datos en S3.
 
 Evidencia: [Archivos Guardados en S3.](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab3-15.png)
+
+
+## Laboratorio 4
+
+Para el desarrollo de este laboratorio en la plataforma HUE, en la sección de Hive, se creó una tabla con el dataset que se usó en la parte 3 del laboratorio 3, el cual contiene los casos positivos de COVID-19 en Colombia. Después tanto en Zeppelin como en JupyterNotebooks se corrieron consultas en SQL para responder las preguntas que se habían resuelto en esa parte del laboratorio 3.
+
+Evidencia: [Tabla en Hive](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab4-0.png) - Los resultados de [Zeppelin y JupyterNotebooks](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/) son las imagines de Lab4-1 hasta Lab4-11.
+
 
 ## Referencias
 - https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-what-is-emr.html
