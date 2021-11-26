@@ -38,17 +38,17 @@ Un cuaderno basado en la web completamente abierto que permite el análisis inte
 Apache Zeppelin es un nuevo cuaderno basado en la web y en fase de incubación que aporta a Hadoop y Spark funciones de ingestión de datos, exploración de datos, visualización, intercambio y colaboración.
 
 ### Fotos de Reproducción del Lab0 
-![Lab0-1](Fotos/Lab0-1.png)
+[Lab0-1](Fotos/Lab0-1.png)
 
-![Lab0-1](Fotos/Lab0-2.png)
+[Lab0-1](Fotos/Lab0-2.png)
 
-![Lab0-1](Fotos/Lab0-3.png)
+[Lab0-1](Fotos/Lab0-3.png)
 
-![Lab0-1](Fotos/Lab0-4.png)
+[Lab0-1](Fotos/Lab0-4.png)
 
-![Lab0-1](Fotos/Lab0-5.png)
+[Lab0-1](Fotos/Lab0-5.png)
 
-![Lab0-1](Fotos/Lab0-6.png)
+[Lab0-1](Fotos/Lab0-6.png)
 
 **NOTA: Este laboratorio tenia como objetivo aprender a crear un cluster EMR con herramientas como los Hive, JupyterHub y Zeppeling, además de hacer uso de un bucket S3 de AWS desde este cluster.**
 
