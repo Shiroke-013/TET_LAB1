@@ -1,0 +1,503 @@
+﻿{
+  "paragraphs": [
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2021-11-26T14:58:22+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1637937679626_1205787195",
+      "id": "paragraph_1637937679626_1205787195",
+      "dateCreated": "2021-11-26T14:41:19+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:410"
+    },
+    {
+      "user": "anonymous",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "nombre departamento": "string",
+                      "NumeroCasos": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://ip-172-31-88-119.ec2.internal:4040/jobs/job?id=31",
+              "$$hashKey": "object:1399"
+            },
+            {
+              "jobUrl": "http://ip-172-31-88-119.ec2.internal:4040/jobs/job?id=32",
+              "$$hashKey": "object:1400"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1637947920172_1252312160",
+      "id": "paragraph_1637947920172_1252312160",
+      "dateCreated": "2021-11-26T17:32:00+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:460",
+      "text": "%sql\nSELECT `nombre departamento`, COUNT(*)  AS NumeroCasos FROM `default`.`hue__tmp_covid19` GROUP BY `nombre departamento` ORDER BY NumeroCasos DESC LIMIT 10;",
+      "dateUpdated": "2021-11-26T17:37:49+0000",
+      "dateFinished": "2021-11-26T17:37:48+0000",
+      "dateStarted": "2021-11-26T17:36:46+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "nombre departamento\tNumeroCasos\nBOGOTA\t1460569\nANTIOQUIA\t765648\nVALLE\t415000\nCUNDINAMARCA\t265897\nSANTANDER\t229051\nBARRANQUILLA\t214692\nCARTAGENA\t125933\nATLANTICO\t122465\nTOLIMA\t108010\nBOYACA\t106243\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%sql\nSELECT `nombre municipio`, COUNT(*)  AS NumeroCasos FROM `default`.`hue__tmp_covid19` GROUP BY `nombre municipio` ORDER BY NumeroCasos DESC LIMIT 10;",
+      "user": "anonymous",
+      "dateUpdated": "2021-11-26T17:38:08+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/sql",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "nombre municipio": "string",
+                      "NumeroCasos": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://ip-172-31-88-119.ec2.internal:4040/jobs/job?id=33",
+              "$$hashKey": "object:1956"
+            },
+            {
+              "jobUrl": "http://ip-172-31-88-119.ec2.internal:4040/jobs/job?id=34",
+              "$$hashKey": "object:1957"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1637947924496_1836830003",
+      "id": "paragraph_1637947924496_1836830003",
+      "dateCreated": "2021-11-26T17:32:04+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:543",
+      "dateFinished": "2021-11-26T17:38:07+0000",
+      "dateStarted": "2021-11-26T17:37:56+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "nombre municipio\tNumeroCasos\nBOGOTA\t1460569\nMEDELLIN\t420064\nCALI\t286145\nBARRANQUILLA\t214692\nCARTAGENA\t125933\nBUCARAMANGA\t108712\nIBAGUE\t75261\nSANTA MARTA\t70195\nMANIZALES\t69820\nBELLO\t63372\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%sql\nSELECT `fecha de diagnóstico`, COUNT(*)  AS DiagnosticoPorDia FROM `default`.`hue__tmp_covid19` GROUP BY `fecha de diagnóstico` ORDER BY DiagnosticoPorDia DESC LIMIT 10;",
+      "user": "anonymous",
+      "dateUpdated": "2021-11-26T17:38:10+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {},
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://ip-172-31-88-119.ec2.internal:4040/jobs/job?id=35",
+              "$$hashKey": "object:2575"
+            },
+            {
+              "jobUrl": "http://ip-172-31-88-119.ec2.internal:4040/jobs/job?id=36",
+              "$$hashKey": "object:2576"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1637947960245_451501924",
+      "id": "paragraph_1637947960245_451501924",
+      "dateCreated": "2021-11-26T17:32:40+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:612",
+      "dateFinished": "2021-11-26T17:38:20+0000",
+      "dateStarted": "2021-11-26T17:38:10+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "fecha de diagnóstico\tDiagnosticoPorDia\n25/6/2021 0:00:00\t34169\n23/6/2021 0:00:00\t33920\n15/6/2021 0:00:00\t33811\n24/6/2021 0:00:00\t33217\n21/6/2021 0:00:00\t33068\n16/6/2021 0:00:00\t32478\n9/6/2021 0:00:00\t32438\n29/6/2021 0:00:00\t32092\n11/6/2021 0:00:00\t31949\n8/6/2021 0:00:00\t31850\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%sql\nSELECT edad, COUNT(*)  AS CasosPorEdad FROM `default`.`hue__tmp_covid19` GROUP BY edad ORDER BY CasosPorEdad DESC;",
+      "user": "anonymous",
+      "dateUpdated": "2021-11-26T17:38:30+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "edad": "string",
+                      "CasosPorEdad": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://ip-172-31-88-119.ec2.internal:4040/jobs/job?id=37",
+              "$$hashKey": "object:3188"
+            },
+            {
+              "jobUrl": "http://ip-172-31-88-119.ec2.internal:4040/jobs/job?id=38",
+              "$$hashKey": "object:3189"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1637947976255_575595686",
+      "id": "paragraph_1637947976255_575595686",
+      "dateCreated": "2021-11-26T17:32:56+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:681",
+      "dateFinished": "2021-11-26T17:38:29+0000",
+      "dateStarted": "2021-11-26T17:38:12+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "edad\tCasosPorEdad\n30\t123529\n28\t122613\n29\t122536\n27\t120926\n26\t120688\n31\t120421\n32\t117559\n25\t115960\n33\t113163\n35\t112485\n34\t111369\n24\t110740\n36\t110503\n38\t108352\n37\t106948\n39\t106470\n40\t104821\n23\t102041\n41\t100419\n22\t93349\n42\t92876\n43\t87871\n21\t86496\n44\t84452\n45\t80706\n20\t77159\n46\t76984\n49\t76503\n47\t75394\n50\t75240\n48\t75060\n51\t73561\n52\t73164\n53\t71546\n54\t70876\n55\t70085\n56\t68773\n57\t67110\n19\t66736\n58\t63773\n59\t60028\n60\t57319\n18\t53567\n61\t51986\n62\t49270\n63\t46344\n17\t44732\n64\t43101\n16\t39634\n65\t38984\n15\t36536\n66\t36050\n14\t33871\n67\t33746\n68\t31791\n13\t31228\n69\t29407\n12\t28751\n70\t27737\n11\t27589\n71\t25900\n10\t24862\n72\t24299\n9\t23493\n73\t22566\n8\t22400\n74\t20946\n7\t19839\n6\t19391\n75\t19299\n1\t18584\n5\t18414\n76\t17582\n4\t17544\n2\t16822\n3\t16662\n77\t16197\n78\t15502\n79\t14526\n80\t14380\n81\t12821\n82\t11729\n83\t10800\n84\t9422\n85\t9034\n86\t7864\n87\t6973\n88\t5973\n89\t4905\n90\t4627\n91\t3793\n92\t3076\n93\t2402\n94\t1860\n95\t1324\n96\t966\n97\t741\n98\t619\n99\t422\n100\t273\n101\t176\n102\t101\n103\t79\n104\t57\n106\t23\n105\t22\n107\t12\n108\t9\n111\t4\n110\t4\n114\t3\n109\t3\nnull\t1\n112\t1\n113\t1\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%sql\nSELECT `fecha de muerte`, COUNT(*)  AS MuertesPorDia FROM `default`.`hue__tmp_covid19` GROUP BY `fecha de muerte` ORDER BY MuertesPorDia DESC NULLS LAST LIMIT 10;",
+      "user": "anonymous",
+      "dateUpdated": "2021-11-26T17:38:39+0000",
+      "progress": 0,
+      "config": {
+        "editorSetting": {
+          "language": "scala",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "colWidth": 12,
+        "editorMode": "ace/mode/scala",
+        "fontSize": 9,
+        "results": {
+          "0": {
+            "graph": {
+              "mode": "table",
+              "height": 300,
+              "optionOpen": false,
+              "setting": {
+                "table": {
+                  "tableGridState": {},
+                  "tableColumnTypeState": {
+                    "names": {
+                      "fecha de muerte": "string",
+                      "MuertesPorDia": "string"
+                    },
+                    "updated": false
+                  },
+                  "tableOptionSpecHash": "[{\"name\":\"useFilter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable filter for columns\"},{\"name\":\"showPagination\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable pagination for better navigation\"},{\"name\":\"showAggregationFooter\",\"valueType\":\"boolean\",\"defaultValue\":false,\"widget\":\"checkbox\",\"description\":\"Enable a footer for displaying aggregated values\"}]",
+                  "tableOptionValue": {
+                    "useFilter": false,
+                    "showPagination": false,
+                    "showAggregationFooter": false
+                  },
+                  "updated": false,
+                  "initialized": false
+                }
+              },
+              "commonSetting": {}
+            }
+          }
+        },
+        "enabled": true
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {
+        "jobUrl": {
+          "propertyName": "jobUrl",
+          "label": "SPARK JOB",
+          "tooltip": "View in Spark web UI",
+          "group": "spark",
+          "values": [
+            {
+              "jobUrl": "http://ip-172-31-88-119.ec2.internal:4040/jobs/job?id=39",
+              "$$hashKey": "object:3720"
+            },
+            {
+              "jobUrl": "http://ip-172-31-88-119.ec2.internal:4040/jobs/job?id=40",
+              "$$hashKey": "object:3721"
+            }
+          ],
+          "interpreterSettingId": "spark"
+        }
+      },
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1637948012189_1449044530",
+      "id": "paragraph_1637948012189_1449044530",
+      "dateCreated": "2021-11-26T17:33:32+0000",
+      "status": "FINISHED",
+      "focus": true,
+      "$$hashKey": "object:750",
+      "dateFinished": "2021-11-26T17:38:39+0000",
+      "dateStarted": "2021-11-26T17:38:20+0000",
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TABLE",
+            "data": "fecha de muerte\tMuertesPorDia\n\t4901329\n21/6/2021 0:00:00\t716\n24/6/2021 0:00:00\t694\n20/6/2021 0:00:00\t684\n29/6/2021 0:00:00\t682\n23/6/2021 0:00:00\t682\n14/6/2021 0:00:00\t679\n19/6/2021 0:00:00\t674\n17/6/2021 0:00:00\t674\n13/6/2021 0:00:00\t673\n"
+          }
+        ]
+      }
+    },
+    {
+      "text": "%sql\n",
+      "user": "anonymous",
+      "dateUpdated": "2021-11-26T17:38:13+0000",
+      "progress": 0,
+      "config": {
+        "colWidth": 12,
+        "fontSize": 9,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sql",
+          "editOnDblClick": false,
+          "completionKey": "TAB",
+          "completionSupport": true
+        },
+        "editorMode": "ace/mode/sql"
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1637948293618_1863934737",
+      "id": "paragraph_1637948293618_1863934737",
+      "dateCreated": "2021-11-26T17:38:13+0000",
+      "status": "READY",
+      "focus": true,
+      "$$hashKey": "object:2007"
+    }
+  ],
+  "name": "Lab4-adchavesp",
+  "id": "2GN8K3RPG",
+  "defaultInterpreterGroup": "spark",
+  "version": "0.9.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {},
+  "path": "/Lab4-adchavesp"
+}
