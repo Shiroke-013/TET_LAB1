@@ -37,18 +37,7 @@ Un cuaderno basado en la web completamente abierto que permite el análisis inte
 
 Apache Zeppelin es un nuevo cuaderno basado en la web y en fase de incubación que aporta a Hadoop y Spark funciones de ingestión de datos, exploración de datos, visualización, intercambio y colaboración.
 
-### Fotos de Reproducción del Lab0 
-[Lab0-1](Fotos/Lab0-1.png)
-
-[Lab0-1](Fotos/Lab0-2.png)
-
-[Lab0-1](Fotos/Lab0-3.png)
-
-[Lab0-1](Fotos/Lab0-4.png)
-
-[Lab0-1](Fotos/Lab0-5.png)
-
-[Lab0-1](Fotos/Lab0-6.png)
+Evidencia: [Lab0-1](Fotos/Lab0-1.png) - [Lab0-2](Fotos/Lab0-2.png) - [Lab0-3](Fotos/Lab0-3.png) - [Lab0-4](Fotos/Lab0-4.png) - [Lab0-5](Fotos/Lab0-5.png) - [Lab0-6](Fotos/Lab0-6.png)
 
 **NOTA: Este laboratorio tenia como objetivo aprender a crear un cluster EMR con herramientas como los Hive, JupyterHub y Zeppeling, además de hacer uso de un bucket S3 de AWS desde este cluster.**
 
@@ -92,15 +81,7 @@ En el momento, los archivos que copiamos se perderan una vez el *"cluster"* sea 
 hadoop distcp /user/hadoop/datasets/* s3a://"Nombre de su Bucket"/datasets
 ```
 
-Evidencia: 
-### Fotos de Reproducción del Lab1
-![Lab1-1](Fotos/Lab1-0.png)
-
-![Lab1-1](Fotos/Lab1-1.png)
-
-![Lab1-1](Fotos/Lab1-2.png)
-
-![Lab1-1](Fotos/Lab1-3.png)
+Evidencia: [Lab1-0](Fotos/Lab1-0.png) - [Lab1-1](Fotos/Lab1-1.png) - [Lab1-2](Fotos/Lab1-2.png) - [Lab1-3](Fotos/Lab1-3.png)
 
 ## Laboratorio 2
 ### ¿Qué es MRJOB?
@@ -150,10 +131,8 @@ Como segunda parte del Lab2, se pidió al estudiante hacer uno de los tres ejerc
 
    * Se crearon tres programas, uno para cada calculo, los cuales se pueden encontrar en: [Code](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Lab2/Code) y el dataset usado en: [dataset](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Lab2/datasets). Estos programas se ejecutan de la misma manera que se ejecuto el ejemplo de WordCount usando MapReduce y MRJOB.
 
-### Fotos de Reproducción del Lab2 - Parte 1
-![Lab2-0](Fotos/Lab2-0.png)
 
-![Lab2-1](Fotos/Lab2-1.png)
+Evidencia: [Lab2-0](Fotos/Lab2-0.png) - [Lab2-1](Fotos/Lab2-1.png)
 
 
 ## Laboratorio 3
