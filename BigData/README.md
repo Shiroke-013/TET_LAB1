@@ -251,7 +251,7 @@ Evidencia: [Archivos Guardados en S3.](https://github.com/Shiroke-013/TET_LABS/e
 
 ## Laboratorio 4
 
-Para el desarrollo de este laboratorio en la plataforma HUE, en la sección de Hive, se creó una tabla con el dataset que se usó en la parte 3 del laboratorio 3, el cual contiene los casos positivos de COVID-19 en Colombia. Después tanto en Zeppelin como en JupyterNotebooks se corrieron consultas en SQL para responder las preguntas que se habían resuelto en esa parte del laboratorio 3.
+Para el desarrollo de este laboratorio en la plataforma HUE, en la sección de Hive, se creó una tabla con el dataset que se usó en la parte 3 del laboratorio 3, el cual contiene los casos positivos de COVID-19 en Colombia. Después tanto en Zeppelin como en JupyterNotebooks se corrieron consultas en SQL para responder las preguntas que se habían resuelto en esa parte del laboratorio 3. Se utilizaron los siguientes archivos: [Zeppelin y JupyterNotebook](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Lab4/)
 
 Evidencia: [Tabla en Hive](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/Lab4-0.png) - Los resultados de [Zeppelin y JupyterNotebooks](https://github.com/Shiroke-013/TET_LABS/edit/main/BigData/Fotos/) son las imagines de Lab4-1 hasta Lab4-11.
 
